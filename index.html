@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Perla Ayurveda · Fisioterapia</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <section id="login" hidden>
+    <div class="login-caja">
+      <div class="pestanas-login">
+        <button type="button" data-login="registro" class="activa">Registrar cliente</button>
+        <button type="button" data-login="sesion">Iniciar sesión</button>
+      </div>
+
+      <!-- Registro público de clientes (se genera desde app.js) -->
+      <div id="regWrap"></div>
+
+      <!-- Inicio de sesión de usuarios -->
+      <form id="formLogin" hidden>
+        <h1 id="loginTitulo"></h1>
+        <p id="loginAyuda" class="muted"></p>
+        <label>Usuario
+          <input id="inUsuario" autocomplete="username" required>
+        </label>
+        <label>Contraseña
+          <input id="inClave" type="password" autocomplete="current-password" minlength="6" required>
+        </label>
+        <label id="boxClave2" hidden>Repetir contraseña
+          <input id="inClave2" type="password" autocomplete="new-password">
+        </label>
+        <p id="loginError" class="error"></p>
+        <button class="btn" id="loginBoton"></button>
+      </form>
+    </div>
+  </section>
+
+  <div id="panel" hidden>
+    <header>
+      <div>
+        <h1>Perla Ayurveda · Fisioterapia</h1>
+        <p id="hoy"></p>
+        <p id="quien"></p>
+      </div>
+      <div class="cobro">
+        <button class="btn secundario" id="btnMiClave">Mi contraseña</button>
+        <button class="btn secundario" id="btnSalir">Cerrar sesión</button>
+      </div>
+    </header>
+    <nav id="nav"></nav>
+    <main id="app"></main>
+    <button class="btn fab" id="btnNueva">+ Nueva cita</button>
+  </div>
+
+  <div id="modal" class="modal-fondo" hidden></div>
+  <div id="aviso" hidden></div>
+  <div id="hojaImpresion"></div>
+
+   <!-- data.js va ANTES de app.js -->
+  <script src="data.js"></script>
+  <script type="module" src="app.js"></script>
+
+</body>
+</html>
